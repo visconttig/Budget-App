@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({
 
 
 //mongoose.connect("mongodb://localhost:27017/budgetDB");
-mongoose.connect("mongodb+srv://visconttig:" + process.env.ATLAS_PASSWORD +
+mongoose.connect("mongodb+srv://visconttig2015:" + process.env.ATLAS_PASSWORD +
 "@cluster0.xokad.mongodb.net/budgetDB");
 
 
