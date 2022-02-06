@@ -1,20 +1,20 @@
 const mongoose = require("mongoose");
 const {Presupuesto, Transaction} = require("../models/models.js");
+const Schema = mongoose.Schema;
+
+
 
 module.exports = async (req, res) => {
   const date = new Date(req.body.date);
-  const accountId = mongoose.Types.ObjectId(req.body.accountType.trim());
+  const accountId = new mongoose.Types.ObjectId(req.body.accountType.trim());
   const payee = req.body.payee.trim();
   const description = req.body.description.trim();
   const ammount = req.body.ammount.trim();
-  const budgetId = mongoose.Types.ObjectId(req.body.budgetId.trim());
-  let category = req.body.category.trim();
-  if(category == ""){
-    category = null;
-  } else {
-    category = mongoose.Types.ObjectId(category);
+  const budgetId = new mongoose.Types.ObjectId(req.body.budgetId.trim());
+  const category = new mongoose.Types.ObjectId(req.body.category.trim());
 
-  }
+
+
 
 
   // test

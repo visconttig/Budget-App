@@ -24,9 +24,9 @@ module.exports = (req, res) => {
         let transactions = [];
         Transaction
           .find({})
-           // .populate({
-           //   path: "category",
-           //   model: "Transaction"})
+           //.populate({
+             // path: "category",
+             // model: "Presupuesto"})
           .populate("category")
           .exec(function(err, foundTransactions) {
             if (err) {
