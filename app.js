@@ -4,11 +4,9 @@ const path = require("path");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 require("dotenv").config();
-//const moment = require("moment");
 
-const Presupuesto = require("./models/Presupuesto");
-const Transaction = require("./models/Transaction");
-const presupuestoTest = require("./models/presupuestoTest");
+const {Presupuesto, Transaction, presupuestoTest} = require("./models/models.js");
+
 
 // check date
 const options = {

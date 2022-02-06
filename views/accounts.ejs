@@ -23,8 +23,9 @@
       </div>
       <div class="col-sm-6 col-lg-2">
         <select class="form-select" name="accountType">
-          <option value=" <%=cashAccountId%> ">Cash</option>
-          <option value=" <%=debitAccountId%> " selected>Debit/Credit</option>
+          <%  accounts.forEach(function(account){ %>
+              <option value=" <%=account._id%> "> <%=account.accountName%> </option>
+          <%  }) %>
         </select>
       </div>
       <div class="col-sm-6 col-lg-2">

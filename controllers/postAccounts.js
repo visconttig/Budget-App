@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const Presupuesto = require("../models/Presupuesto");
-const Transaction = require("../models/Transaction");
+const {Presupuesto, Transaction} = require("../models/models.js");
 
 module.exports = async (req, res) => {
   const date = new Date(req.body.date);

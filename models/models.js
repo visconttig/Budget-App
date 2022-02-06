@@ -1,5 +1,52 @@
 const mongoose = require("mongoose");
-const Presupuesto = require("../models/Presupuesto");
+const Schema = mongoose.Schema;
+
+const presupuestoSchema = new mongoose.Schema({
+  budgetName: String,
+  accounts: [{
+    accountName: String,
+    accountType: Schema.Types.ObjectId,
+    accountAvailable: {
+      type: Number,
+      default: 0
+    }
+  }],
+  categories: [{
+    categoryName: String,
+    categoryAvailable: {
+      type: Number,
+      default: 0
+    },
+    categoryAssigned: {
+      type: Number,
+      default: 0
+    }
+  }]
+});
+
+const Presupuesto = mongoose.model("Presupuesto", presupuestoSchema);
+
+
+
+const transactionSchema = new mongoose.Schema({
+  date: Date,
+  account: {
+    type: Schema.Types.ObjectId,
+    ref: "Presupuesto"
+  },
+  payee: String,
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: "Presupuesto"
+  },
+  description: String,
+  ammount: Number
+});
+
+
+const Transaction = mongoose.model("Transaction", transactionSchema);
+
+
 
 const presupuestoTest = new Presupuesto({
   budgetName: "Test",
@@ -85,4 +132,4 @@ const presupuestoTest = new Presupuesto({
   ]
 });
 
-module.exports = presupuestoTest;
+module.exports = {Presupuesto, Transaction, presupuestoTest};

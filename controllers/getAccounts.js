@@ -1,10 +1,12 @@
-const Presupuesto = require("../models/Presupuesto");
-const presupuestoTest = require("../models/presupuestoTest");
-const Transaction = require("../models/Transaction");
 const moment = require("moment");
+
+const {Transaction, Presupuesto, presupuestoTest} = require("../models/models.js");
 
 
 module.exports = (req, res) => {
+
+
+
   Presupuesto.find({}, async function(err, foundBudget) {
     if (err) {
       console.log(err);
@@ -17,9 +19,14 @@ module.exports = (req, res) => {
         const budgetId = foundBudget[0]._id;
         const categories = foundBudget[0].categories;
 
+        const accounts = foundBudget[0].accounts;
+
         let transactions = [];
         Transaction
           .find({})
+           // .populate({
+           //   path: "category",
+           //   model: "Transaction"})
           .populate("category")
           .exec(function(err, foundTransactions) {
             if (err) {
@@ -33,11 +40,13 @@ module.exports = (req, res) => {
                 cashAvailable: cash,
                 debitAvailable: debit,
                 budgetId: budgetId,
-                cashAccountId: cashAccountId,
-                debitAccountId: debitAccountId,
+                 cashAccountId: cashAccountId,
+                 debitAccountId: debitAccountId,
                 transactions: transactions,
                 moment: moment,
-                categories: categories
+                categories: categories,
+
+                accounts: accounts
               });
             }
           })
