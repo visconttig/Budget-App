@@ -1,0 +1,79 @@
+<%- include("partials/_header.ejs"); -%>
+
+<h1>Accounts</h1>
+<div class="">
+  <div class=" row accounts-summary">
+    <div class="col debit">
+      <h1>Credit/debit</h1>
+      <h1>$ <%= debitAvailable %> </h1>
+    </div>
+    <div class=" col efectivo">
+      <h1>Efectivo</h1>
+      <h1>$ <%= cashAvailable %> </h1>
+    </div>
+  </div>
+</div>
+
+<!--add transactions-->
+<div class="form">
+  <form class="" action="/accounts" method="post">
+    <div class="row">
+      <div class="col-sm-6 col-lg-2">
+        <input class="form-control" type="date" name="date" value="">
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <select class="form-select" name="accountType">
+          <option value=" <%=cashAccountId%> ">Cash</option>
+          <option value=" <%=debitAccountId%> " selected>Debit/Credit</option>
+        </select>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <input class="form-control" type="text" name="payee" value="" placeholder="payee">
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <select class="form-select" name="category">
+          <%  categories.forEach(function(category){ %>
+          <%    if(category.categoryName == "=Ready to assign="){ %>
+          <option selected value="<%=category._id%>"> <%=category.categoryName%></option>
+          <%    } else {  %>
+          <option value="<%=category._id%>"> <%=category.categoryName%></option>
+          <%    }  %>
+          <%  });  %>
+        </select>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <input class="form-control" type="text" name="description" value="" placeholder="Description">
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <input class="form-control" type="number" name="ammount" value="" placeholder="ammount (+/-)">
+      </div>
+    </div>
+    <div class="row d-flex justify-content-end align-content-end text-end">
+      <div class="col-sm-6 col-lg-2">
+        <input class="hidden" type="hidden" name="budgetId" value=" <%= budgetId %> ">
+        <button class="btn btn-dark" type="submit" name="button">add transaction</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="transactions">
+  <% transactions.forEach(function(transaction){ %>
+  <div class="row">
+    <p class="col"> <%= moment(transaction.date).format("DD/MM/YY"); %> </p>
+    <%  if(transaction.account.equals(cashAccountId)){ %>
+    <p class="col">Cash</p>
+    <%    } else { %>
+    <p class="col">Debit</p>
+    <%    } %>
+    <p class="col"> <%= transaction.payee %> </p>
+    <p class="col"> <%= transaction.category %> </p>
+    <p class="col"> <%= transaction.description %> </p>
+    <p class="col"> <%= transaction.ammount %> </p>
+  </div>
+  <% }); %>
+</div>
+
+
+
+<%- include("partials/_footer.ejs"); -%>
