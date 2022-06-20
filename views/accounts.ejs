@@ -1,13 +1,16 @@
 <%- include("partials/_header.ejs"); -%>
 
+<div class="accounts-page">
+
+  
 <h1>Accounts</h1>
 <div class="">
-  <div class=" row accounts-summary">
-    <div class="col debit">
+  <div class="  accounts-summary">
+    <div class=" debit">
       <h1>Credit/debit</h1>
       <h1>$ <%= debitAvailable %> </h1>
     </div>
-    <div class=" col efectivo">
+    <div class="  efectivo">
       <h1>Efectivo</h1>
       <h1>$ <%= cashAvailable %> </h1>
     </div>
@@ -17,21 +20,21 @@
 <!--add transactions-->
 <div class="form">
   <form class="" action="/accounts" method="post">
-    <div class="row">
-      <div class="col-sm-6 col-lg-2">
+    <div class="">
+      <div class=" ">
         <input class="form-control" type="date" name="date" value="">
       </div>
-      <div class="col-sm-6 col-lg-2">
+      <div class=" ">
         <select class="form-select" name="accountType">
           <%  accounts.forEach(function(account){ %>
               <option value=" <%=account._id%> "> <%=account.accountName%> </option>
           <%  }) %>
         </select>
       </div>
-      <div class="col-sm-6 col-lg-2">
+      <div class=" ">
         <input class="form-control" type="text" name="payee" value="" placeholder="payee">
       </div>
-      <div class="col-sm-6 col-lg-2">
+      <div class=" ">
         <select class="form-select" name="category">
           <%  categories.forEach(function(category){ %>
           <%    if(category.categoryName == "=Ready to assign="){ %>
@@ -42,15 +45,15 @@
           <%  });  %>
         </select>
       </div>
-      <div class="col-sm-6 col-lg-2">
+      <div class=" ">
         <input class="form-control" type="text" name="description" value="" placeholder="Description">
       </div>
-      <div class="col-sm-6 col-lg-2">
+      <div class=" ">
         <input class="form-control" type="number" name="ammount" value="" placeholder="ammount (+/-)">
       </div>
     </div>
-    <div class="row d-flex justify-content-end align-content-end text-end">
-      <div class="col-sm-6 col-lg-2">
+    <div class=" d-flex justify-content-end align-content-end text-end">
+      <div class=" ">
         <input class="hidden" type="hidden" name="budgetId" value=" <%= budgetId %> ">
         <button class="btn btn-dark" type="submit" name="button">add transaction</button>
       </div>
@@ -60,21 +63,23 @@
 
 <div class="transactions">
   <% transactions.forEach(function(transaction){ %>
-  <div class="row">
-    <p class="col"> <%= moment(transaction.date).format("DD/MM/YY"); %> </p>
+  <div class="">
+    <p class=""> <%= moment(transaction.date).format("DD/MM/YY"); %> </p>
     <%  if(transaction.account.equals(cashAccountId)){ %>
-    <p class="col">Cash</p>
+    <p class="">Cash</p>
     <%    } else { %>
-    <p class="col">Debit</p>
+    <p class="">Debit</p>
     <%    } %>
-    <p class="col"> <%= transaction.payee %> </p>
-    <p class="col"> <%= transaction.category %> </p>
-    <p class="col"> <%= transaction.description %> </p>
-    <p class="col"> <%= transaction.ammount %> </p>
+    <p class=""> <%= transaction.payee %> </p>
+    <p class=""> <%= transaction.category %> </p>
+    <p class=""> <%= transaction.description %> </p>
+    <p class=""> <%= transaction.ammount %> </p>
   </div>
   <% }); %>
 </div>
 
 
+
+</div>
 
 <%- include("partials/_footer.ejs"); -%>

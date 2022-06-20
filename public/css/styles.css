@@ -1,16 +1,128 @@
-form .col-sm-6, .col, .col-6 {
-  padding: 0.3%;
+* {
+  box-sizing: border-box;
 }
 
-/* no border */
-#assigned, p.category, #available {
+body {
+  margin: 0;
+  /* background-color: rgb(75, 83, 89); */
+  font-family: 'Dancing Script', cursive;
+  background-color: rgb(237, 237, 237);
+}
+
+link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+:visited {
+  color: yellow;
+}
+
+
+
+#available {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 2rem;
+  background-color: rgb(14, 163, 14);
+  /* border: 3px solid black; */
+  border-radius: 25px;
+  /* text-align: end; */
+  padding: 0 3%;
+  width: 45%;
+  height: 7rem;
+  /* margin: 0 auto; */
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* background-color: yellow; */
+}
+
+.nav-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-size: 1rem;
+  min-height: 5rem;
+  padding: 1% 5%;
+}
+
+.web-title {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.title-div {
+  margin-left: 8%;
+}
+
+.nav-links-ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 25%;
+}
+
+.categories {
+  min-width: 100%;
+  /* background-color: green; */
+  /* background-color: rgb(237, 237, 237);
+  border: 1px solid red; */
+  /* border-radius: 25px; */
+  overflow: hidden;
+}
+
+.categories-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* min-width: 100%; */
+  flex-wrap: wrap;
+  border: 1px solid rgb(218, 218, 218);
+  /* background-color: rgb(237, 237, 237); */
+  border-radius: 25px;
+  padding: 0 1%;
+  margin: 2px 0;
+  font-size: 1.2rem;
+} 
+
+.categories-form:hover {
+  background-color: rgb(164, 164, 164);
+}
+
+
+input {
+  background-color: inherit;
   border: none;
-  step: false;
-  font-size: 0.95rem;
+  border-bottom: 1px dashed rgb(123, 123, 123);
+  text-align: start;
+  width: auto;
 }
 
-.transactions p {
-  font-size: 0.95rem;
+.categories .category {
+  flex-basis: 50%;
+}
+
+.budget-page {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  padding: 1% 1%;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
 }
 
 /* hide 'step' arrows */
@@ -24,74 +136,24 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+  width: 100px;
 }
 
-
-.hidden {
-  display: none;
-}
-
-.header {
-  background-color: rgb(0,52,64);
-  height: 5rem;
-}
-
-
-.available {
-  display: inline-block;
-  color: rgb(23,163,54);
-  margin-top: 0;
-  font-size: 4rem;
-}
-
-.excedeMaximo {
-  color: red;
-}
-
-.available-title  {
-  position: relative;
+.add-category-para {
   display: inline;
 }
 
-
-p.test {
-  margin: 0.1rem;
-}
-
-
 .bar-menu {
-  padding: 0.1rem;
-  background-color: rgb(229,245,249);
-  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
-
-
-.debit {
-display: inline-block;
-background-color: #5b6b80;
+#addCatButton {
+  border: none;
 }
 
-.efectivo {
-  display: inline-block;
-  background-color: #5b6b80;
-}
-
-
-.transaction-field {
-    display: inline-block;
-    margin: 0.2rem;
-}
-
-.navbar {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
-}
-.navbar-nav  li a:hover {
-    color: #1abc9c !important;
+#addCatButton:hover {
+  transform: scale(200%);
+  background-color: inherit;
 }

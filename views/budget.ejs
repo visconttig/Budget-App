@@ -1,17 +1,21 @@
 <%- include("partials/_header.ejs"); -%>
 
-<div class="header row">
-  <div class="col">
+<div class="budget-page">
+
+  
+<div class="header">
+  <div id="available">
     <%  if(excedeMaximo){ %>
-    <h1 class="available excedeMaximo col"> $ <%= totalDisponible %> </h1>
+    <h1 class="available excedeMaximo "> $ <%= totalDisponible %> </h1>
     <%  } else { %>
-    <h1 class="available col">$ <%= totalDisponible %> </h1>
+    <!-- <h1 class="available ">$ <%= totalDisponible %> </h1> -->
+    <h1 class="available ">$ <%= totalDisponible %> </h1>
     <%  } %>
   </div>
 </div>
 <div class="budget">
   <div class="bar-menu">
-    <p class="test">Add category: <button type="button" name="" id="addCatButton">+</button></p>
+    <p class="add-category-para">Add category: <button type="button" name="" id="addCatButton">+</button></p>
     <form class="add-category hidden" action="/add-category" method="post">
       <input type="text" name="categoryName" value="" placeholder="category name" autocomplete="false">
       <button type="submit" name="addCatButton" value="<%=budget[0]._id%>">+</button>
@@ -19,27 +23,29 @@
   </div>
 
 
-
+  <div class="categories">
   <% categories.forEach(function(item){ %>
-  <form action="/budget" method="post">
-    <div class="row form-group">
-      <div class="col-6">
-        <p class="form-control category"> <%=item.categoryName%> </p>
+  
+    <form action="/budget" method="post" class="categories-form">
+      <div class="category">
+        <p class=""> <%=item.categoryName%> </p>
       </div>
-      <div class="col">
-        <input id="assigned" type="number" name="assigned"
-        value="<%=item.categoryAssigned%>" class="form-control"
+      <div class="">
+        <input type="number" name="assigned"
+        value="<%=item.categoryAssigned%>" class="assigned"
         onchange="this.form.submit()" placeholder="---" autocomplete="off">
       </div>
-      <div class="col">
-        <p id="available" class="form-control" >$ <%=item.categoryAvailable%></p>
+      <div class="">
+        <p class="available" >$ <%=item.categoryAvailable%></p>
         <input type="hidden" name="presupuestoId" value="<%= budget[0]._id %>">
         <input type="hidden" name="categoryId" value="<%=item._id%>">
-          </div>
-    </div>
+      </div>
   </form>
+  
   <% }); %>
 </div>
+</div>
 
+</div>
 
 <%- include("partials/_footer.ejs"); -%>

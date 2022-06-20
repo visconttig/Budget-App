@@ -70,6 +70,7 @@ app.get("/budget", function(req, res) {
 
         totalDisponible -= assignedTotal;
 
+
         res.render("budget", {
           budget: foundBudget,
           categories: categories,

@@ -64,26 +64,23 @@ const presupuestoTest = new Presupuesto({
       categoryName: "=Ready to assign="
     },
     {
-      categoryName: "1 CUOTA AUTITO $ 214.507"
+      categoryName: "1 Cuota autito $ 214.507"
     },
     {
-      categoryName: "1 ESTACIONAMIENTO $ 60.000"
+      categoryName: "1 Estacionamiento $ 60.000"
     },
     {
-      categoryName: "2 TELEFONO MOVIL $ 4.000"
+      categoryName: "2 Teléfono móvil $ 4.000"
     },
     {
-      categoryName: "3 COPAGOS ANGIE $ 195.000"
+      categoryName: "3 Copagos Angie $ 195.000"
     },
     {
       categoryName: "Cuota *mensual* YNAB $ 13.000"
     },
     // GASTOS 'REALES'
     {
-      categoryName: "1/SEM BENCINA $ 25.000"
-    },
-    {
-      categoryName: "Medicamentos $ 14.000"
+      categoryName: "1/SEM Bencina $ 25.000"
     },
     {
       categoryName: "Supermercado & compras de camino."
@@ -98,16 +95,7 @@ const presupuestoTest = new Presupuesto({
       categoryName: "**Ajustes/conciliaciones**"
     },
     // METAS / OBJETIVOS
-    {
-      categoryName: "FONDO DE EMERGENCIA"
-    },
-    {
-      categoryName: "DESARROLLO PERSONAL"
-    },
     // PRÉSTAMOS
-    {
-      categoryName: "Préstamo Vale2"
-    },
     // CAPRICHOS
     {
       categoryName: "Otros gastos (Ej: Mercadolibre, Aliexpress, etc.)"
