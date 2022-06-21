@@ -4,17 +4,17 @@
 
 body {
   margin: 0;
-  font-family: 'Dancing Script', cursive;
-  background-color: rgb(237, 237, 237);
+  font-family: 'Courier Prime', monospace;
+  background-color: rgba(241, 242, 235, 1);
 }
 
 link {
-  color: rgb(255, 255, 255);
+  color: rgb(250, 36, 36);
   text-decoration: none;
 }
 
 :visited {
-  color: yellow;
+  color: black;
 }
 
 
@@ -25,10 +25,12 @@ link {
   justify-content: flex-end;
   align-items: center;
   font-size: 2rem;
-  background-color: rgb(14, 163, 14);
+  /* background-color: rgb(14, 163, 14); */
+  background-color: rgb(218, 218, 218);
+  color: rgba(67, 185, 41, 1);
   border-radius: 25px;
   padding: 0 3%;
-  width: 45%;
+  width: 80%;
   height: 7rem;
   margin-top: 16px;
   margin-bottom: 16px;
@@ -54,8 +56,12 @@ link {
 }
 
 .header-container {
-  background-color: rgb(0, 0, 0);
+  /* background-color: rgb(0, 0, 0); */
+  /* background-color: rgba(36, 123, 160, 1); */
+  /* background-color: rgb(27, 27, 26); */
+  background-color: rgba(3, 0, 39, 1);
   width: 100%;
+  min-height: 5rem;
 }
 
 .nav-links-ul {
@@ -64,10 +70,22 @@ link {
   justify-content: space-between;
 }
 
+li {
+  background-color: rgba(67, 185, 41, 1);
+  /* border: 1px solid greenyellow; */
+  border-radius: 25px;
+  text-align: center;
+  padding: 0 8px;
+  list-style: none;
+  margin: 2px auto;
+  width: 100%;
+}
+
 .web-title {
    font-size: 2rem; 
   font-weight: bolder;
   margin: 0;
+  color: rgba(67, 185, 41, 1);
 }
 
 
@@ -88,10 +106,14 @@ link {
   padding: 0 8px;
   margin: 2px 0;
   font-size: 1.2rem;
-} 
+  background-color: inherit;
+
+}
 
 .categories-form:hover {
-  background-color: rgb(164, 164, 164);
+  /* background-color: rgb(164, 164, 164); */
+  /* background-color: rgba(36, 123, 160, 1); */
+  background-color: rgb(218, 218, 218);
 }
 
 
@@ -135,6 +157,12 @@ input[type=number] {
 
 .add-category-para {
   display: inline;
+  opacity: 0.20;
+  color: yellow;
+}
+
+.add-category-para:hover {
+  opacity: 1;
 }
 
 .bar-menu {
@@ -145,11 +173,15 @@ input[type=number] {
 
 #addCatButton {
   border: none;
+  background-color: inherit;
 }
 
 #addCatButton:hover {
   transform: scale(200%);
   background-color: inherit;
+  opacity: 1;
+  color: yellow;
+  
 }
 
 
@@ -157,3 +189,9 @@ input[type=number] {
   color: red;
 }
 
+#footer-copy {
+  color: white;
+  font-size: 1rem;
+  margin: auto;
+  display: inline;
+}

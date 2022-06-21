@@ -73,9 +73,6 @@ const presupuestoTest = new Presupuesto({
       categoryName: "2 Teléfono móvil $ 4.000"
     },
     {
-      categoryName: "3 Copagos Angie $ 195.000"
-    },
-    {
       categoryName: "Cuota *mensual* YNAB $ 13.000"
     },
     // GASTOS 'REALES'

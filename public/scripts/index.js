@@ -1,5 +1,5 @@
 // show "add category" hidden form
-$("#addCatButton").click(function(){
+$(".add-category-para").click(function(){
   $("form").show();
-  $("#addCatButton").hide();
+  $(".add-category-para").setClass("hidden");
 });
