@@ -4,8 +4,8 @@
 
 body {
   margin: 0;
-  font-family: 'Courier Prime', monospace;
-  background-color: rgba(241, 242, 235, 1);
+  font-family: "Courier Prime", monospace;
+  padding: 0 7%;
 }
 
 link {
@@ -16,8 +16,6 @@ link {
 :visited {
   color: black;
 }
-
-
 
 #available {
   display: flex;
@@ -56,10 +54,6 @@ link {
 }
 
 .header-container {
-  /* background-color: rgb(0, 0, 0); */
-  /* background-color: rgba(36, 123, 160, 1); */
-  /* background-color: rgb(27, 27, 26); */
-  background-color: rgba(3, 0, 39, 1);
   width: 100%;
   min-height: 5rem;
 }
@@ -71,8 +65,6 @@ link {
 }
 
 li {
-  background-color: rgba(67, 185, 41, 1);
-  /* border: 1px solid greenyellow; */
   border-radius: 25px;
   text-align: center;
   padding: 0 8px;
@@ -82,13 +74,11 @@ li {
 }
 
 .web-title {
-   font-size: 2rem; 
+  font-size: 2rem;
   font-weight: bolder;
   margin: 0;
   color: rgba(67, 185, 41, 1);
 }
-
-
 
 .categories {
   min-width: 100%;
@@ -107,15 +97,11 @@ li {
   margin: 2px 0;
   font-size: 1.2rem;
   background-color: inherit;
-
 }
 
 .categories-form:hover {
-  /* background-color: rgb(164, 164, 164); */
-  /* background-color: rgba(36, 123, 160, 1); */
   background-color: rgb(218, 218, 218);
 }
-
 
 input {
   background-color: inherit;
@@ -150,14 +136,14 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
   width: 100px;
 }
 
 .add-category-para {
   display: inline;
-  opacity: 0.20;
+  opacity: 0.2;
   color: yellow;
 }
 
@@ -181,9 +167,7 @@ input[type=number] {
   background-color: inherit;
   opacity: 1;
   color: yellow;
-  
 }
-
 
 .excedeMaximo {
   color: red;
@@ -192,6 +176,37 @@ input[type=number] {
 #footer-copy {
   color: white;
   font-size: 1rem;
-  margin: auto;
+  margin: 200px auto 100px auto;
   display: inline;
+}
+
+.accounts-summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.form-container {
+  margin: 100px auto;
+  padding: 25px 5px;
+  border: 2px solid grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.form-container button {
+  margin: 8px auto;
+  align-self: flex-end;
+}
+
+.single-tansaction {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+div > p {
+  display: inline-block;
 }
